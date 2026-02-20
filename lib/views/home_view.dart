@@ -45,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
           SliverToBoxAdapter(child: SearchNews()),
           SliverToBoxAdapter(child: CategoriesListView()),
           SliverToBoxAdapter(child: SizedBox(height: 16.h)),
-          SliverToBoxAdapter(child: NewsListView()),
+          NewsListView(),
         ],
       ),
     );
