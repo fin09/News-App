@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/widgets/categories_list_view.dart'
-    show CategoriesListView;
-import 'package:news_app/widgets/news_list_view.dart';
+
+import 'package:news_app/widgets/categories_list_view.dart';
+import 'package:news_app/widgets/news_list_view_builder.dart';
 import 'package:news_app/widgets/search_news.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+   const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -45,8 +45,7 @@ class _HomeViewState extends State<HomeView> {
           SliverToBoxAdapter(child: SearchNews()),
           SliverToBoxAdapter(child: CategoriesListView()),
           SliverToBoxAdapter(child: SizedBox(height: 16.h)),
-          NewsListView(),
-        ],
+        NewsListViewBuilder(category: 'general'),        ],
       ),
     );
   }

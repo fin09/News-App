@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app/models/news_model.dart';
+import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key, required this.news});
-  final NewsModel news;
+  // ignore: non_constant_identifier_names
+  const NewsTile({super.key, required this.article_model});
+  // ignore: non_constant_identifier_names
+  final ArticleModel article_model;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,8 @@ class NewsTile extends StatelessWidget {
                 topRight: Radius.circular(12.r),
               ),
               child: Image.network(
-                news.image,
+                article_model.image ??
+                    "https://thumbs.dreamstime.com/z/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg?ct=jpeg",
                 height: 200.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -44,7 +47,7 @@ class NewsTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    news.title,
+                    article_model.title??"",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -55,7 +58,7 @@ class NewsTile extends StatelessWidget {
                   ),
                   SizedBox(height: 6.h),
                   Text(
-                    news.description,
+                    article_model.subTitle??"",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: Colors.grey, fontSize: 14.sp),

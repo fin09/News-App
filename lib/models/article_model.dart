@@ -10,11 +10,11 @@ class ArticleModel {
     required this.subTitle,
     // required this.source,
   });
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    return ArticleModel(
+      image: json['urlToImage'],
+      title: json['title'],
+      subTitle: json['description'],
+    );
+  }
 }
-
-// class SourceModel {
-//   final String? id;
-//   final String? name;
-
-//   SourceModel({this.id, this.name});
-// }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchNews extends StatelessWidget {
-  const SearchNews({Key? key}) : super(key: key);
+  const SearchNews({super.key});
 
   @override
   Widget build(BuildContext context) {
